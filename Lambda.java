@@ -8,15 +8,17 @@ public class Lambda {
 
         // Anonymous inner class
 
-        A a = new A() {
-            public void show() {
-                System.out.println("in Show");
-            }
-        };
+        // A a = new A() {
+        //     public void show() {
+        //         System.out.println("in Show");
+        //     }
+        // };
+        // a.show();
+
+        // Lambda Expression
+
+        A a = () -> System.out.println("in Show");
         a.show();
     }
 }
-
-
-
 

@@ -4,6 +4,12 @@ class MyException extends Exception {
     }
 }
 
+class B {
+    public void checkException() throws ClassNotFoundException {
+        Class.forName("Chiku");
+    }
+}
+
 public class ExceptionPractice {
     public static void main( String[] args ) {
 
@@ -16,10 +22,23 @@ public class ExceptionPractice {
                 throw new MyException("Cannot divide by zero");
         }
         catch ( MyException e ) {
-            System.out.println("Caught MyException " + e);
+            System.out.println("Caught MyException " + e.getMessage());
         }
 
         System.out.println("Value of j: " + j);
+        
+        B b = new B();
+
+        try {
+            b.checkException();
+        }
+        catch ( ClassNotFoundException e ) {
+            System.out.println("Class Not Found");
+        }
 
     }
 }
+
+
+
+
